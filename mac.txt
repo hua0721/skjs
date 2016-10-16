@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 i an window10
 two once
+=======
+i an mac
+>>>>>>> 1f74d91200504df77da8f98b8749a1a86fc680e3
