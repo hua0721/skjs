@@ -295,8 +295,8 @@
 													<form action="#" method="post">
 													<input type="hidden" name="cmd" value="_cart">
 													<input type="hidden" name="add" value="1"> 
-													<input type="hidden" name="w3ls_item" value="Digital Camera"> 
-													<input type="hidden" name="amount" value="100.00"> 
+													<input type="hidden" name="w3ls_item" value="${name }"> 
+													<input type="hidden" name="amount" value="${price }"> 
 													<button type="submit" class="w3ls-cart" style="width:110px;"><i class="fa fa-cart-plus" aria-hidden="true"></i>加入购物车</button>
 													<a href="#" class="btn btn-primary" role="button"><i
 															class="iconfont">&#xe6b4;</i>购买</a>

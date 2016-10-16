@@ -2304,7 +2304,7 @@
 
 									strings : {
 										button : 'Check Out with <img src="//cdnjs.cloudflare.com/ajax/libs/sbmincart/3.0.1/paypal_65x18.png" width="65" height="18" alt="PayPal" />',
-										subtotal : 'Subtotal:',
+										subtotal : '合计:',
 										discount : 'Discount:',
 										empty : 'Your shopping cart is empty'
 									}
@@ -2988,13 +2988,13 @@
 									},
 									ZAR : {
 										before : 'R'
-									}
+									},
 								};
 
 								module.exports = function currency(amount,
 										config) {
 									var code = config && config.currency
-											|| 'USD', value = currencies[code], before = value.before
+											|| ' ', value = currencies[code], before = value.before
 											|| '', after = value.after || '', length = value.length || 2, showCode = value.code
 											&& config && config.showCode, result = amount;
 
