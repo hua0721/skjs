@@ -17,6 +17,7 @@ import cn.hua.model.GoodsPicture;
 import cn.hua.service.Service;
 import cn.hua.utils.Conversion;
 import cn.hua.utils.FileOperation;
+import cn.hua.utils.ThreadControl;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -209,8 +210,8 @@ public class FileAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	// 下载
-	public String download() {
+	
+	public String download1() {
 		try {
 			if (id != null) {
 				String path = "";

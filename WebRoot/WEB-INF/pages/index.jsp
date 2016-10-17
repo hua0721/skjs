@@ -25,6 +25,7 @@
 <!-- banner slider -->
 <link href="css/animate.min.css" rel="stylesheet" type="text/css"
 	media="all" />
+<link rel="stylesheet" href="css/MagicZoom.css" type="text/css" />
 <!-- <link href="css/owl.carousel.css" rel="stylesheet" type="text/css"
 	media="all"> -->
 <!-- carousel slider -->
@@ -36,19 +37,22 @@
 .featuredProducts td {
 	padding: 2px;
 }
-
+/*  .productPicture:hover{
+	border:1px solid #0f0;
+	opacity: 0.3;
+}  */
 .thumbnail {
 	text-align: center;
 	vertical-align: middle;
+	cursor:pointer;
 }
 
-.thumbnail img {
-	border: 1px solid #333;
+.thumbnail .pimg {
 	width: 100%;
 	height: 100%;
 }
 
-.thumbnail .productPicture {
+.thumbnail .productPicture{
 	width: 200px;
 	height: 200px;
 	margin: 0 auto;
@@ -66,15 +70,9 @@
 	width: 100%;
 }
 
-.paging li {
-	height: 30px;
-}
-.spinButton{
-	min-width:125px;min-height:125px;
-}
 </style>
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
 <!-- //js -->
 <script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 <script>
@@ -158,27 +156,21 @@
 						</ul></li>
 					<li class="dropdown head-dpdn"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-percent" aria-hidden="true"></i> 今日特价<span
+							class="fa fa-cart-plus" aria-hidden="true"></i> 购物车<span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="offers.html">鲜货供应</a></li>
-							<li><a href="offers.html">产品折扣</a></li>
-							<li><a href="offers.html">特别优惠</a></li>
+							<li><a href="offers.html">查看购物车</a></li>
+							<li><a href="offers.html">清空购物车</a></li>
 						</ul></li>
-					<li class="dropdown head-dpdn"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-gift" aria-hidden="true"></i>优惠卡<span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="offers.html">超市优惠</a></li>
-							<li><a href="offers.html">红包</a></li>
-							<li><a href="offers.html">代币券</a></li>
-						</ul></li>
-					<!-- <li class="dropdown head-dpdn"><a href="contact.html"
-						class="dropdown-toggle"><i class="fa fa-map-marker"
-							aria-hidden="true"></i>实体店</a></li>
 					<li class="dropdown head-dpdn"><a href="card.html"
-						class="dropdown-toggle"><i class="fa fa-credit-card-alt"
-							aria-hidden="true"></i>信用卡</a></li> -->
+						class="dropdown-toggle"><i class="fa fa-star"
+							aria-hidden="true"></i>收藏夹</a></li>
+					<!-- <!-- <li class="dropdown head-dpdn"><a href="contact.html"
+						class="dropdown-toggle"><i class="fa fa-map-marker"
+							aria-hidden="true"></i>实体店</a></li> -->
+					<li class="dropdown head-dpdn"><a href="card.html"
+						class="dropdown-toggle"><i class="fa  fa-smile-o"
+							aria-hidden="true"></i>联系客服</a></li>
 					<li class="dropdown head-dpdn"><a href="help.html"
 						class="dropdown-toggle"><i class="fa fa-question-circle"
 							aria-hidden="true"></i> 帮助</a></li>
@@ -262,7 +254,37 @@
 							</a></li> -->
 						</ul>
 						<div class="clearfix"></div>
-						<h3 class="w3ls-title">老板推荐</h3>
+						<h3 class="w3ls-title">新品速递</h3>
+						<div id="myTabContent" class="tab-content">
+							<table class="featuredProducts">
+								<tbody>
+									<s:iterator value="#request.list" status="c">
+										<s:if test="#c.count==1">
+											<tr>
+										</s:if>
+										<td class="col-md-2 col-sm-2 col-lg-2">
+											<div class="thumbnail" data-id="${goodsId}">
+												<div class="productPicture">
+													<a href="json/download_file?isBreviary=1&id=${breviaryPicture.id}" title="Images" class="MagicZoom">
+														<img class="pimg" src="json/download_file?isBreviary=1&id=${breviaryPicture.id}" />
+												</a>
+													</div>
+												<div class="caption">
+													<b><a href="products?id=${goodsId }">${name}</a></b><br/>
+													<small>${simpleDescript}</small>
+												</div>
+											</div>
+										</td>
+										<s:elseif test="#c.count%5==0">
+											</tr>
+											<tr>
+										</s:elseif>
+									</s:iterator>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<h3 class="w3ls-title">特别推荐</h3>
 						<div id="myTabContent" class="tab-content">
 							<table class="featuredProducts">
 								<tbody>
@@ -273,12 +295,12 @@
 										<td class="col-md-2 col-sm-2 col-lg-2">
 											<div class="thumbnail">
 												<div class="productPicture">
-													<img
-														src="json/download_file?isBreviary=1&id=${breviaryPicture.id}"
-														alt="...">
-												</div>
+													<a href="json/download_file?isBreviary=1&id=${breviaryPicture.id}" title="Images" class="MagicZoom">
+														<img class="pimg" src="json/download_file?isBreviary=1&id=${breviaryPicture.id}" />
+												</a>
+													</div>
 												<div class="caption">
-													<b>${name}</b><br/>
+													<b><a href="products?id=${goodsId }">${name}</a></b><br/>
 													<small>${simpleDescript}</small>
 												</div>
 											</div>
@@ -300,113 +322,113 @@
 									<div class="col-md-3 focus-grid">
 										<a href="products.html" class="wthree-btn">
 											<div class="focus-image">
-												<i class="fa fa-mobile"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Mobiles</h4>
+											<h4 class="clrchg">玫瑰</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products.html" class="wthree-btn wthree1">
 											<div class="focus-image">
-												<i class="fa fa-laptop"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Electronics & Appliances</h4>
+											<h4 class="clrchg">丁香</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products4.html" class="wthree-btn wthree2">
 											<div class="focus-image">
-												<i class="fa fa-wheelchair"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Furnitures</h4>
+											<h4 class="clrchg">绿色</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products3.html" class="wthree-btn wthree3">
 											<div class="focus-image">
-												<i class="fa fa-home"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Home Decor</h4>
+											<h4 class="clrchg">吸辐射</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products9.html" class="wthree-btn wthree3">
 											<div class="focus-image">
-												<i class="fa fa-book"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Books & Music</h4>
+											<h4 class="clrchg">增氧</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products1.html" class="wthree-btn wthree4">
 											<div class="focus-image">
-												<i class="fa fa-asterisk"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Fashion</h4>
+											<h4 class="clrchg">爱情</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products2.html" class="wthree-btn wthree2">
 											<div class="focus-image">
-												<i class="fa fa-gamepad"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Kids</h4>
+											<h4 class="clrchg">心意</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products5.html" class="wthree-btn wthree">
 											<div class="focus-image">
-												<i class="fa fa-shopping-basket"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Groceries</h4>
+											<h4 class="clrchg">萌</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products7.html" class="wthree-btn wthree5">
 											<div class="focus-image">
-												<i class="fa fa-medkit"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Health</h4>
+											<h4 class="clrchg">大叶</h4>
 										</a>
 									</div>
 									<div class="col-md-2 focus-grid w3focus-grid-mdl">
 										<a href="products8.html" class="wthree-btn wthree1">
 											<div class="focus-image">
-												<i class="fa fa-car"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Automotive</h4>
+											<h4 class="clrchg">银杏</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products5.html" class="wthree-btn wthree2">
 											<div class="focus-image">
-												<i class="fa fa-cutlery"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Food</h4>
+											<h4 class="clrchg">花灌木</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products4.html" class="wthree-btn wthree5">
 											<div class="focus-image">
-												<i class="fa fa-futbol-o"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Sports</h4>
+											<h4 class="clrchg">常青树</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products2.html" class="wthree-btn wthree3">
 											<div class="focus-image">
-												<i class="fa fa-gamepad"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Games & Toys</h4>
+											<h4 class="clrchg">乔木</h4>
 										</a>
 									</div>
 									<div class="col-md-3 focus-grid">
 										<a href="products6.html" class="wthree-btn ">
 											<div class="focus-image">
-												<i class="fa fa-gift"></i>
+												<i class="icon iconfont">&#xe60c;</i>
 											</div>
-											<h4 class="clrchg">Gifts</h4>
+											<h4 class="clrchg">好看</h4>
 										</a>
 									</div>
 									<div class="clearfix"></div>
@@ -522,7 +544,8 @@
 			});
 		});
 	</script>
-
+<script src="js/MagicZoom.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript"></script>
 	<!-- Resource jQuery -->
 	<!-- //menu js aim -->
 	<!-- Bootstrap core JavaScript

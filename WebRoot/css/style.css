@@ -3942,6 +3942,21 @@ h3.w3ls-title.w3ls-title1 {
 	position:relative;
 	z-index:200;
 }
-.spinButton a i:hover{
-	color:#090;
+.spinButton li{
+  width: 100px;
+  height:180px;
+  text-align: center;
+}
+.spinButton .icon{
+  font-size: 42px;
+  line-height: 100px;
+  margin: 10px 0;
+  color:#050;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+
+}
+.spinButton .icon:hover{
+  font-size: 100px;
 }
