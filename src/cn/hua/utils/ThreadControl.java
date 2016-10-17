@@ -1,15 +1,17 @@
 package cn.hua.utils;
 
-public class ThreadControl extends Thread{
+import java.util.concurrent.Callable;
+
+public class ThreadControl implements Callable<Object>{
 	private Object obj;
 	private String method;
 	public ThreadControl(Object obj,String method){
 		this.obj = obj;this.method= method;
 	}
 	@Override
-	public void run() {
-		// TODO Auto-generated method stub
-		
+	public Object call() throws Exception {
+		System.out.println(Thread.currentThread().getName());
+		return obj.getClass().getMethod(method).invoke(obj);
 	}
 	
 }

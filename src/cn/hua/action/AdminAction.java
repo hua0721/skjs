@@ -1,9 +1,5 @@
 package cn.hua.action;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,20 +7,16 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+
 import cn.hua.annotation.Jurisdiction;
 import cn.hua.formBean.Paging;
-import cn.hua.model.Classify;
-import cn.hua.model.GoodsKind;
-import cn.hua.model.Role;
-import cn.hua.model.State;
 import cn.hua.model.User;
 import cn.hua.service.Service;
 import cn.hua.utils.CacheData;
 import cn.hua.utils.Encryption;
 import cn.hua.utils.GetI18nConfig;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
 
 public class AdminAction extends ActionSupport implements ServletRequestAware,
 		SessionAware {

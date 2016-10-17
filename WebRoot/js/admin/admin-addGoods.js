@@ -25,9 +25,6 @@ $(function() {
 					url : "json/upload_file?id="+ $("#goodsId").val()+"&isBreviary="+isBreviary+"&sourcePicId="+sourcePicId,// 用于文件上传的服务器端请求地址
 					secureuri : false,// 一般设置为false
 					fileElementId : 'file',// 文件上传空间的id属性
-											// <input
-											// type="file"
-					// id="file" name="file" />
 					dataType : 'json',// 返回值类型 一般设置为json
 					error : function(data) {
 						alert(data.cause)

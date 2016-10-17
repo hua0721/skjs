@@ -9,6 +9,11 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.UUID;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 import cn.hua.model.BreviaryPicture;
 import cn.hua.model.Explain;
@@ -18,6 +23,7 @@ import cn.hua.service.Service;
 import cn.hua.utils.Conversion;
 import cn.hua.utils.FileOperation;
 import cn.hua.utils.ThreadControl;
+import cn.hua.utils.ThreadPool;
 
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -38,7 +44,6 @@ public class FileAction extends ActionSupport {
 	private String[] htmlfileContentType;
 	private int isBreviary;
 	private String sourcePicId;
-
 	public void setSourcePicId(String sourcePicId) {
 		this.sourcePicId = sourcePicId;
 	}
@@ -210,8 +215,7 @@ public class FileAction extends ActionSupport {
 		return SUCCESS;
 	}
 
-	
-	public String download1() {
+	public String download() {
 		try {
 			if (id != null) {
 				String path = "";

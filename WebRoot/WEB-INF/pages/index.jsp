@@ -10,6 +10,12 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
+<script type="text/javascript">
+	var start = new Date().getTime();
+	window.onload=function(){
+		alert(new Date().getTime()-start)
+	}
+</script>
 <title>小苗基地</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
