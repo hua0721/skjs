@@ -18,6 +18,7 @@ import cn.hua.model.Goods;
 import cn.hua.model.GoodsKind;
 import cn.hua.model.GoodsPicture;
 import cn.hua.model.MySet;
+import cn.hua.model.ShoppingCart;
 @Component
 public class GoodsDaoImpl implements GoodsDao {
 	private HibernateTemplate hibernateTemplate;
@@ -90,20 +91,40 @@ public class GoodsDaoImpl implements GoodsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	/**
-	 * 获取分页数据
-	 * @parme paging  分页信息
-	 * @parme id	当前用户的ID，用于获取全局设置(paging.getMoreKind() == 0 ? " " : "moreKind.id in("
+	 * 鑾峰彇鍒嗛〉鏁版嵁
+	 * @parme paging  鍒嗛〉淇℃伅
+	 * @parme id	褰撳墠鐢ㄦ埛鐨処D锛岀敤浜庤幏鍙栧叏灞�璁剧疆(paging.getMoreKind() == 0 ? " " : "moreKind.id in("
 				+ paging.getMoreKind() + ") and ")
 	 */
 	public List<Goods> getGoodsPaging(Paging paging) {
 			Session session = hibernateTemplate.getSessionFactory()
 					.getCurrentSession();
-			Query<Goods> query = null; // 获取不同对象的分页数据
+			Query<Goods> query = null; // 鑾峰彇涓嶅悓瀵硅薄鐨勫垎椤垫暟鎹�
 			System.out.println(paging);
 			query = session.createQuery("from Goods");
 			paging.setTotalNum(query.list().size());
 			return query.setFirstResult(paging.getCurrentRow())
 					.setMaxResults(paging.getSize()).list();
+	}
+	@Override
+	public void addShoppingCart(ShoppingCart cart) {
+		hibernateTemplate.save(cart);
+		
+	}
+	@Override
+	public void deleteShoppingCart(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public ShoppingCart getShoppingCartById(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public ShoppingCart getShoppingCartByUserId(String id) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

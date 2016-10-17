@@ -2994,7 +2994,7 @@
 								module.exports = function currency(amount,
 										config) {
 									var code = config && config.currency
-											|| ' ', value = currencies[code], before = value.before
+											|| 'USD', value = currencies[code], before = value.before
 											|| '', after = value.after || '', length = value.length || 2, showCode = value.code
 											&& config && config.showCode, result = amount;
 
@@ -3003,11 +3003,10 @@
 												+ result.toFixed(length)
 												+ after;
 									}
-
-									if (showCode) {
+									//此处不显示钱后缀
+									/*if (showCode) {
 										result += ' ' + code;
-									}
-
+									}*/
 									return result;
 								};
 

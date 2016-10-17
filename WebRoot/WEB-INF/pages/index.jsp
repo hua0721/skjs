@@ -10,7 +10,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="en">
 <head>
-<title>Home</title>
+<title>小苗基地</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
@@ -31,8 +31,8 @@
 	type="text/css" media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/iconfont.css" rel="stylesheet">
-<link href="css/spinMenu.css" rel="stylesheet" type="text/css"
-	media="all" />
+<!-- <link href="css/spinMenu.css" rel="stylesheet" type="text/css"
+	media="all" /> -->
 <!-- menu style -->
 <!-- banner slider -->
 <link href="css/animate.min.css" rel="stylesheet" type="text/css"
@@ -185,12 +185,12 @@
 							<li><a href="offers.html">红包</a></li>
 							<li><a href="offers.html">代币券</a></li>
 						</ul></li>
-					<li class="dropdown head-dpdn"><a href="contact.html"
+					<!-- <li class="dropdown head-dpdn"><a href="contact.html"
 						class="dropdown-toggle"><i class="fa fa-map-marker"
 							aria-hidden="true"></i>实体店</a></li>
 					<li class="dropdown head-dpdn"><a href="card.html"
 						class="dropdown-toggle"><i class="fa fa-credit-card-alt"
-							aria-hidden="true"></i>信用卡</a></li>
+							aria-hidden="true"></i>信用卡</a></li> -->
 					<li class="dropdown head-dpdn"><a href="help.html"
 						class="dropdown-toggle"><i class="fa fa-question-circle"
 							aria-hidden="true"></i> 帮助</a></li>
@@ -198,8 +198,8 @@
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="header-two">
-			<!-- header-two -->
+		<!-- <div class="header-two">
+			header-two
 			<div class="container">
 				<div class="header-search">
 					<form action="#" method="post">
@@ -230,7 +230,7 @@
 				<div class="clearfix"></div>
 			</div>
 		</div>
-		<!-- //header-two -->
+		//header-two -->
 		<!-- coming soon -->
 		<div class="soon">
 			<div class="container">
@@ -247,35 +247,34 @@
 					<div class="bs-example bs-example-tabs" role="tabpanel"
 						data-example-id="togglable-tabs">
 						<ul id="myTab" class=" nav-tabs" role="tablist">
-							<li role="presentation" class="active spinButton"
+							<li role="presentation" class="spinButton"
 								data="electronics"><a href="#home" id="home-tab" role="tab"
-								data-toggle="tab"> <i class="fa fa-laptop"
-									aria-hidden="true"></i>
-									<h5>Electronics</h5>
+								data-toggle="tab"> <i class="icon iconfont">&#xe601;</i>
+									<h5>盘栽</h5>
 							</a></li>
 							<li role="presentation" class="spinButton" data="fashion"><a
 								href="#carl" role="tab" id="carl-tab" data-toggle="tab"> <i
-									class="fa fa-female" aria-hidden="true"></i>
-									<h5>Fashion</h5>
+									class="icon iconfont" aria-hidden="true">&#xe611;</i>
+									<h5>花卉</h5>
 							</a></li>
 							<li role="presentation" class="spinButton" data="gifts"><a
 								href="#james" role="tab" id="james-tab" data-toggle="tab"> <i
-									class="fa fa-gift" aria-hidden="true"></i>
-									<h5>Photo & Gifts</h5>
+									class="icon iconfont" aria-hidden="true">&#xe60b;</i>
+									<h5>树苗</h5>
 							</a></li>
 							<li role="presentation" class="spinButton" data="decor"><a
 								href="#decor" role="tab" id="decor-tab" data-toggle="tab"> <i
-									class="fa fa-home" aria-hidden="true"></i>
-									<h5>Home Decor</h5>
+									class="icon iconfont" aria-hidden="true">&#xe603;</i>
+									<h5>种子</h5>
 							</a></li>
-							<li role="presentation" class="spinButton" data="sports"><a
+							<!-- <li role="presentation" class="spinButton" data="sports"><a
 								href="#sports" role="tab" id="sports-tab" data-toggle="tab">
 									<i class="fa fa-motorcycle" aria-hidden="true"></i>
 									<h5>Sports</h5>
-							</a></li>
+							</a></li> -->
 						</ul>
 						<div class="clearfix"></div>
-						<h3 class="w3ls-title">Featured Products</h3>
+						<h3 class="w3ls-title">老板推荐</h3>
 						<div id="myTabContent" class="tab-content">
 							<table class="featuredProducts">
 								<tbody>
@@ -291,16 +290,8 @@
 														alt="...">
 												</div>
 												<div class="caption">
-													<h4>${name}</h4>
-													<form action="#" method="post">
-													<input type="hidden" name="cmd" value="_cart">
-													<input type="hidden" name="add" value="1"> 
-													<input type="hidden" name="w3ls_item" value="${name }"> 
-													<input type="hidden" name="amount" value="${price }"> 
-													<button type="submit" class="w3ls-cart" style="width:110px;"><i class="fa fa-cart-plus" aria-hidden="true"></i>加入购物车</button>
-													<a href="#" class="btn btn-primary" role="button"><i
-															class="iconfont">&#xe6b4;</i>购买</a>
-															</form>
+													<b>${name}</b><br/>
+													<small>${simpleDescript}</small>
 												</div>
 											</div>
 										</td>
@@ -394,7 +385,7 @@
 						<!-- deals -->
 						<div class="deals">
 							<div class="container">
-								<h3 class="w3ls-title">DEALS OF THE DAY</h3>
+								<h3 class="w3ls-title">热门关键字</h3>
 								<div class="deals-row">
 									<div class="col-md-3 focus-grid">
 										<a href="products.html" class="wthree-btn">
@@ -641,7 +632,7 @@
 		});
 	</script>
 	<!-- menu js aim -->
-	<script src="js/spinMenu.js"></script>
+<%-- 	<script src="js/spinMenu.js"></script> --%>
 
 	<!-- Resource jQuery -->
 	<!-- //menu js aim -->

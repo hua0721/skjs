@@ -3942,3 +3942,6 @@ h3.w3ls-title.w3ls-title1 {
 	position:relative;
 	z-index:200;
 }
+.spinButton a i:hover{
+	color:#090;
+}
