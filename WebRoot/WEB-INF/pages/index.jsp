@@ -14,18 +14,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
-<%-- <script type="application/x-javascript">
-	
-	
-	
-	
-	 addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } 
-
-
-
-
-</script> --%>
 <!-- Custom Theme files -->
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"
 	type="text/css" media="all" />
@@ -301,84 +289,6 @@
 										</s:elseif>
 									</s:iterator>
 									</tr>
-									<tr>
-										<td colspan="5" style="text-align:center;">
-											<div class="paging" style="margin:0 auto;">
-												<ul class="pagination">
-													<s:if test="currentPage<2">
-														<li class="disabled"><a href="javascript:void(0)"
-															aria-label="Previous"> <span style="height:21px"
-																class="glyphicon glyphicon-arrow-left"></span>
-														</a></li>
-													</s:if>
-													<s:else>
-														<li><a href="javascript:void(0)"
-															aria-label="Previous" paging-data="${currentPage-1 }"
-															data-toggle="tooltip" data-placement="top"
-															title="<s:text name='previousPage'/>"> <span
-																style="height:21px"
-																class="glyphicon glyphicon-arrow-left"></span>
-														</a></li>
-													</s:else>
-													<s:if test="totalPage==0">
-														<li class="disabled"><a href="javascript:void(0)">0</a></li>
-													</s:if>
-													<s:elseif test="totalPage<11">
-														<s:iterator begin="1" end="totalPage" status="s">
-															<s:if test="#s.count==currentPage">
-																<li class="active"><a href="javascript:void(0)"
-																	paging-data="${s.count}">${s.count}</a></li>
-															</s:if>
-															<s:else>
-																<li><a href="javascript:void(0)"
-																	paging-data="${s.count}">${s.count}</a></li>
-															</s:else>
-														</s:iterator>
-													</s:elseif>
-													<s:else>
-														<s:if test="currentPage<6">
-															<s:iterator begin="1" end="10" status="s">
-																<s:if test="#s.count==currentPage">
-																	<li class="active"><a href="javascript:void(0)"
-																		paging-data="${s.count}">${s.count}</a></li>
-																</s:if>
-																<s:else>
-																	<li><a href="javascript:void(0)"
-																		paging-data="${s.count}">${s.count}</a></li>
-																</s:else>
-															</s:iterator>
-														</s:if>
-														<s:else>
-															<s:iterator begin="currentPage-5"
-																end="currentPage+5>totalPage?totalPage:currentPage+5"
-																status="s" var="cur">
-																<s:if test="#cur==currentPage">
-																	<li class="active"><a href="javascript:void(0)"
-																		paging-data="${cur}">${cur }</a></li>
-																</s:if>
-																<s:else>
-																	<li><a href="javascript:void(0)"
-																		paging-data="${cur}">${cur}</a></li>
-																</s:else>
-															</s:iterator>
-														</s:else>
-													</s:else>
-													<s:if test="currentPage>=totalPage">
-														<li class="disabled"><a href="javascript:void(0)"
-															aria-label="Next"><span style="height:21px"
-																class="glyphicon glyphicon-arrow-right"></span> </a></li>
-													</s:if>
-													<s:else>
-														<li><a href="javascript:void(0)" aria-label="Next"
-															paging-data="${currentPage+1}" data-toggle="tooltip"
-															data-placement="top" title="<s:text name='nextPage'/>"
-															style="margin-right:20px"><span style="height:21px"
-																class="glyphicon glyphicon-arrow-right"></span></a></li>
-													</s:else>
-												</ul>
-											</div>
-										</td>
-									<tr />
 								</tbody>
 							</table>
 						</div>
@@ -555,25 +465,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-		w3ls.render();
-
-		w3ls.cart.on('w3sb_checkout', function(evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {
-					items[i].set('shipping', 0);
-					items[i].set('shipping2', 0);
-				}
-			}
-		});
-	</script>
-	<!-- //cart-js -->
 	<!-- countdown.js -->
 	<script src="js/jquery.knob.js"></script>
 	<script src="js/jquery.throttle.js"></script>
@@ -631,8 +522,6 @@
 			});
 		});
 	</script>
-	<!-- menu js aim -->
-<%-- 	<script src="js/spinMenu.js"></script> --%>
 
 	<!-- Resource jQuery -->
 	<!-- //menu js aim -->
