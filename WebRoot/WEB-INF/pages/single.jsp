@@ -24,25 +24,25 @@
 
 </script>
 <!-- Custom Theme files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/animate.min.css" rel="stylesheet" type="text/css"
+<!-- <link href="css/animate.min.css" rel="stylesheet" type="text/css"
 	media="all" />
-<!-- animation -->
+animation
 <link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
-<!-- menu style -->
+menu style
 <link href="css/owl.carousel.css" rel="stylesheet" type="text/css"
-	media="all">
+	media="all"> -->
 <!-- carousel slider -->
 <!-- //Custom Theme files -->
 <!-- font-awesome icons -->
 <link href="css/font-awesome.css" rel="stylesheet">
 <!-- //font-awesome icons -->
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
 <script src="js/owl.carousel.js"></script>
-<script src="js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 <!--flex slider-->
 <script defer src="js/jquery.flexslider.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css"
@@ -122,91 +122,56 @@
 			<!--header-one-->
 			<div class="w3ls-header-left">
 				<p>
-					<a href="#"></a>
+					<a href="#"><img src="img/logo.png" class="logo" /></a>
 				</p>
 			</div>
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-user" aria-hidden="true"></i> My Account<span
-							class="caret"></span></a>
+							class="fa fa-user" aria-hidden="true"></i>我的账户<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="login.html">Login </a></li>
-							<li><a href="signup.html">Sign Up</a></li>
-							<li><a href="login.html">My Orders</a></li>
-							<li><a href="login.html">Wallet</a></li>
+							<s:if test="#session.user!=null">
+								<li><a href="#"><s:property
+											value="#session.user.username" /></a></li>
+								<li><a href="userLogout">注销</a></li>
+								<li><a href="login.html">我的订单</a></li>
+								<li><a href="login.html">钱包</a></li>
+							</s:if>
+							<s:else>
+								<li><a href="loginUi">登陆</a></li>
+							</s:else>
 						</ul></li>
 					<li class="dropdown head-dpdn"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-percent" aria-hidden="true"></i> Today's Deals<span
+							class="fa fa-cart-plus" aria-hidden="true"></i> 购物车<span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="offers.html">Cash Back Offers</a></li>
-							<li><a href="offers.html">Product Discounts</a></li>
-							<li><a href="offers.html">Special Offers</a></li>
+							<li><a href="offers.html">查看购物车</a></li>
+							<li><a href="offers.html">清空购物车</a></li>
 						</ul></li>
-					<li class="dropdown head-dpdn"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-gift" aria-hidden="true"></i> Gift Cards<span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="offers.html">Product Gift card</a></li>
-							<li><a href="offers.html">Occasions Register</a></li>
-							<li><a href="offers.html">View Balance</a></li>
-						</ul></li>
-					<li class="dropdown head-dpdn"><a href="contact.html"
-						class="dropdown-toggle"><i class="fa fa-map-marker"
-							aria-hidden="true"></i> Store Finder</a></li>
 					<li class="dropdown head-dpdn"><a href="card.html"
-						class="dropdown-toggle"><i class="fa fa-credit-card-alt"
-							aria-hidden="true"></i> Credit Card</a></li>
+						class="dropdown-toggle"><i class="fa fa-star"
+							aria-hidden="true"></i>收藏夹</a></li>
+					<!-- <!-- <li class="dropdown head-dpdn"><a href="contact.html"
+						class="dropdown-toggle"><i class="fa fa-map-marker"
+							aria-hidden="true"></i>实体店</a></li> -->
+					<li class="dropdown head-dpdn"><a href="card.html"
+						class="dropdown-toggle"><i class="fa  fa-smile-o"
+							aria-hidden="true"></i>联系客服</a></li>
 					<li class="dropdown head-dpdn"><a href="help.html"
 						class="dropdown-toggle"><i class="fa fa-question-circle"
-							aria-hidden="true"></i> Help</a></li>
+							aria-hidden="true"></i> 帮助</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="header-two">
-			<!-- header-two -->
-			<div class="container">
-				<div class="header-search">
-					<form action="#" method="post">
-						<input type="search" name="Search"
-							placeholder="Search for a Product..." required="">
-						<button type="submit" class="btn btn-default"
-							aria-label="Left Align">
-							<i class="fa fa-search" aria-hidden="true"> </i>
-						</button>
-					</form>
-				</div>
-				<div class="header-cart">
-					<div class="my-account">
-						<a href="contact.html"><i class="fa fa-map-marker"
-							aria-hidden="true"></i> CONTACT US</a>
-					</div>
-					<div class="cart">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart" /> <input
-								type="hidden" name="display" value="1" />
-							<button class="w3view-cart" type="submit" name="submit" value="">
-								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-							</button>
-						</form>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-		</div>
-		<!-- //header-two -->
 		<!-- breadcrumbs -->
 		<div class="container">
 			<ol class="breadcrumb breadcrumb1">
 				<li><a href="index.html">Home</a></li>
-				<li class="active">Single Page</li>
-			</ol>
+				<li class="active">${name }</li>
+			</ol><s:debug></s:debug>
 			<div class="clearfix"></div>
 		</div>
 	</div>
@@ -219,31 +184,29 @@
 					<div class="col-md-6 single-top-left">
 						<div class="flexslider">
 							<ul class="slides">
-								<li data-thumb="img/s1.jpg">
+							<s:if test="breviaryPicture!=null">
+								<li data-thumb="json/download_file?isBreviary=1&id=<s:property value='breviaryPicture.id'/>">
 									<div class="thumb-image detail_images">
-										<img src="img/s1.jpg" data-imagezoom="true"
+										<img src="json/download_file?isBreviary=1&id=<s:property value='breviaryPicture.id'/>" data-imagezoom="true"
 											class="img-responsive" alt="">
 									</div>
 								</li>
-								<li data-thumb="img/s2.jpg">
-									<div class="thumb-image">
-										<img src="img/s2.jpg" data-imagezoom="true"
+							</s:if>
+							<s:iterator value="#request.goodsPictures">
+							<s:debug></s:debug>
+								<li data-thumb="json/download_file?id=${id}">
+										<div class="thumb-image detail_images">
+										<img src="json/download_file?id=${id}" data-imagezoom="true"
 											class="img-responsive" alt="">
 									</div>
 								</li>
-								<li data-thumb="img/s3.jpg">
-									<div class="thumb-image">
-										<img src="img/s3.jpg" data-imagezoom="true"
-											class="img-responsive" alt="">
-									</div>
-								</li>
+							</s:iterator>
 							</ul>
 						</div>
 					</div>
 					<div class="col-md-6 single-top-right">
-						<h3 class="item_name">Electric Snow Blower</h3>
-						<p>Processing Time: Item will be shipped out within 2-3
-							working days.</p>
+						<h3 class="item_name">${name }</h3>
+						<p>${simpleDescript }</p>
 						<div class="single-rating">
 							<ul>
 								<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
@@ -257,9 +220,9 @@
 						</div>
 						<div class="single-price">
 							<ul>
-								<li>$540</li>
-								<li><del>$600</del></li>
-								<li><span class="w3off">10% OFF</span></li>
+								<li>$${salePrice}</li>
+								<li><del>$${price }</del></li>
+								<li><span class="w3off">${price/salePrice}% OFF</span></li>
 								<li>Ends on: June,5th</li>
 								<li><a href="#"><i class="fa fa-gift"
 										aria-hidden="true"></i> Coupon</a></li>
@@ -320,8 +283,9 @@
 					</ul>
 				</div>
 			</div>
+			</div>
 			<!-- recommendations -->
-			<div class="recommend">
+			<%-- <div class="recommend">
 				<h3 class="w3ls-title">Our Recommendations</h3>
 				<script>
 					$(document).ready(function() {
@@ -527,10 +491,10 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
 			<!-- //recommendations -->
 			<!-- collapse-tabs -->
-			<div class="collpse tabs">
+			<%-- <div class="collpse tabs">
 				<h3 class="w3ls-title">About this item</h3>
 				<div class="panel-group collpse" id="accordion" role="tablist"
 					aria-multiselectable="true">
@@ -649,7 +613,65 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> --%>
+				<div style="width:80%;margin:0 auto;min-width:1000px;">
+			<div class="collpse tabs" style="width:100%">
+					<h3 class="w3ls-title">　</h3>
+					<div class="panel panel-default" style="margin-top:50px;">
+						<div class="panel-heading" role="tab">
+							<h4 class="panel-title">
+								<a class="collapsed pa_italic" role="button"
+									data-toggle="collapse" data-parent="#accordion"
+									href="#collapseTwo" aria-expanded="false"
+									aria-controls="collapseTwo"> <i
+									class="fa fa-info-circle fa-icon" aria-hidden="true"></i> 商品展示页
+									<span class="fa fa-angle-down fa-arrow" aria-hidden="true"></span>
+									<i class="fa fa-angle-up fa-arrow" aria-hidden="true"></i>
+								</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse in"
+							role="tabpanel" aria-labelledby="headingTwo">
+							<div class="panel-body">
+								<s:if test="#request.explain!=null">
+									<iframe src='<s:property value="explain.path"/>' onLoad="reinitIframeEND();" id="iframepage" name="iframepage" frameBorder=0 scrolling=no width="100%" height="100%"></iframe>
+										<script type="text/javascript">
+										window.onresize = function() {
+						console.log(1)
+						reinitIframeEND();
+					}
+					function reinitIframe() {
+						var iframe = document.getElementById("iframepage");
+						try {
+							var bHeight = iframe.contentWindow.document.body.scrollHeight;
+							var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+							var height = Math.max(bHeight, dHeight);
+							iframe.height = height;
+						} catch (ex) {
+						}
+					}
+
+					var timer1 = window.setInterval("reinitIframe()", 500); //定时开始  
+
+					function reinitIframeEND() {
+						var iframe = document.getElementById("iframepage");
+						try {
+							var bHeight = iframe.contentWindow.document.body.scrollHeight;
+							var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+							var height = Math.max(bHeight, dHeight);
+							iframe.height = height;
+						} catch (ex) {
+						}
+						// 停止定时  
+						window.clearInterval(timer1);
+
+					}
+				</script>
+								</s:if>
+							</div>
+						</div>
+					</div>
+				</div>
 			<!-- //collapse -->
 		</div>
 	</div>

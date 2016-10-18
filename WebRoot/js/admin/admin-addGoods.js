@@ -59,7 +59,7 @@ $(function() {
 
 		}
 	})
-	// 商品分类监听
+	/*// 商品分类监听
 	$(".goodsKindTr select")
 			.change(
 					function() {
@@ -98,7 +98,7 @@ $(function() {
 										}
 									})
 						}
-					})
+					})*/
 	// 添加颜色监听
 	$(".addColor").click(function() {
 		$(this).before($("<input type='color' name='color'>"));
@@ -207,7 +207,7 @@ $(function() {
 							$("#addGoodsForm select[name=goodsKindTemp]")
 									.popover("destroy");
 						}
-						if ($("#addGoodsForm .moreKindTd input:checked").length < 1) {
+					/*	if ($("#addGoodsForm .moreKindTd input:checked").length < 1) {
 							$("#addGoodsForm .moreKindTd").popover("show");
 							window.setTimeout(function() {
 								$("#addGoodsForm .moreKindTd").popover(
@@ -216,7 +216,7 @@ $(function() {
 							isPass = false;
 						} else {
 							$("#addGoodsForm .moreKindTd").popover("destroy");
-						}
+						}*/
 						if ($("#addGoodsForm input[name=name]").val() == 0) {
 							$("#addGoodsForm input[name=name]").popover("show");
 							window.setTimeout(function() {

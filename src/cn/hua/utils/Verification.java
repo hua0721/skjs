@@ -240,10 +240,10 @@ public class Verification {
 			error[i++] = "商品分类必须还未选择";
 			return error;
 		}
-		if(goods.getMoreKindTemp()==null){
+		/*if(goods.getMoreKindTemp()==null){
 			error[i++] = "商品详细分类至少选择一项";
 			return error;
-		}
+		}*/
 		if(goods.getName()==null||goods.getName()!=null&&goods.getName().trim().equals("")){
 			error[i++] = "商品名称不能为空";
 			return error;

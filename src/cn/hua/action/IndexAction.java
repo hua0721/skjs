@@ -1,16 +1,14 @@
 package cn.hua.action;
 
-import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
 
-import cn.hua.formBean.Paging;
-import cn.hua.model.Goods;
-import cn.hua.service.Service;
-
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
+
+import cn.hua.formBean.Paging;
+import cn.hua.service.Service;
 
 public class IndexAction extends ActionSupport implements RequestAware{
 	/**
@@ -31,8 +29,11 @@ public class IndexAction extends ActionSupport implements RequestAware{
 		Paging paging = new Paging();
 		paging.setSize(15);
 		System.out.println(paging);
-		List<Goods> list = service.getGoodsPaging(paging);
-		request.put("list", list);
+		paging.setScene("new");
+		request.put("newGoodsList", service.getGoodsPaging(paging));
+		paging.setScene("recommend");
+		request.put("randomList", service.getGoodsPaging(paging));
+		paging.setScene(null);
 		ActionContext.getContext().getValueStack().push(paging);
 		return SUCCESS;
 	}

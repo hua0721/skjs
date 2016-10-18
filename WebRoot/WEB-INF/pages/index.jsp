@@ -13,7 +13,7 @@
 <script type="text/javascript">
 	var start = new Date().getTime();
 	window.onload=function(){
-		alert(new Date().getTime()-start)
+		alert("页面加载用时："+(new Date().getTime()-start))
 	}
 </script>
 <title>小苗基地</title>
@@ -264,7 +264,7 @@
 						<div id="myTabContent" class="tab-content">
 							<table class="featuredProducts">
 								<tbody>
-									<s:iterator value="#request.list" status="c">
+									<s:iterator value="#request.newGoodsList" status="c">
 										<s:if test="#c.count==1">
 											<tr>
 										</s:if>
@@ -275,9 +275,12 @@
 														<img class="pimg" src="json/download_file?isBreviary=1&id=${breviaryPicture.id}" />
 												</a>
 													</div>
-												<div class="caption">
-													<b><a href="products?id=${goodsId }">${name}</a></b><br/>
-													<small>${simpleDescript}</small>
+												<div class="caption" style="position:relative;">
+													<p style="font-size:10px;position:absolute;top:0;right:0;">成交 <span style="color:#f50;padding:0;">${sellsum}笔</span></p>
+													<b><a href="single?goodsId=${goodsId }">${name}</a></b><br/>
+													<div style="height:35px;overflow:hidden;">
+														<small>${simpleDescript}</small>
+													</div>
 												</div>
 											</div>
 										</td>
@@ -290,11 +293,11 @@
 								</tbody>
 							</table>
 						</div>
-						<h3 class="w3ls-title">特别推荐</h3>
+						<h3 class="w3ls-title">热门推荐</h3>
 						<div id="myTabContent" class="tab-content">
 							<table class="featuredProducts">
 								<tbody>
-									<s:iterator value="#request.list" status="c">
+									<s:iterator value="#request.randomList" status="c">
 										<s:if test="#c.count==1">
 											<tr>
 										</s:if>
@@ -305,9 +308,12 @@
 														<img class="pimg" src="json/download_file?isBreviary=1&id=${breviaryPicture.id}" />
 												</a>
 													</div>
-												<div class="caption">
-													<b><a href="products?id=${goodsId }">${name}</a></b><br/>
-													<small>${simpleDescript}</small>
+												<div class="caption" style="position:relative">
+													<p style="font-size:10px;position:absolute;top:0;right:0;">成交 <span style="color:#f50;padding:0;">${sellsum}笔</span></p>
+													<b><a href="single?goodsId=${goodsId }">${name}</a></b><br/>
+													<div style="height:35px;overflow:hidden;">
+														<small>${simpleDescript}</small>
+													</div>
 												</div>
 											</div>
 										</td>

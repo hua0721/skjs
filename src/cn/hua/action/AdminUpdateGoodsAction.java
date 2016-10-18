@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.RequestAware;
-import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionContext;
+import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
 
 import cn.hua.formBean.GoodsForm;
 import cn.hua.model.Goods;
@@ -12,10 +15,6 @@ import cn.hua.model.GoodsKind;
 import cn.hua.model.GoodsPicture;
 import cn.hua.service.Service;
 import cn.hua.utils.Conversion;
-
-import com.opensymphony.xwork2.ActionContext;
-import com.opensymphony.xwork2.ActionSupport;
-import com.opensymphony.xwork2.ModelDriven;
 
 public class AdminUpdateGoodsAction extends ActionSupport implements RequestAware,ModelDriven<GoodsForm>{
 	private static final long serialVersionUID = 1L;
@@ -40,8 +39,8 @@ public class AdminUpdateGoodsAction extends ActionSupport implements RequestAwar
 			List<GoodsKind> goodsKinds = service.getGoodsKindRoot();
 			goodsKinds.add(0,new GoodsKind(0, "----点击选择商品分类----"));
 			request.put("goodsKind", goodsKinds);	//获取分类
-			request.put("moreKindAllChild",service.getGoodsKindChilds(goodsForm.getGoodsKindTemp()));	//获取详细分类
-			List<GoodsPicture> goodsPictures = service.getGoodsPicturesByGoodsId(goodsForm.getGoodsId());
+			/*request.put("moreKindAllChild",service.getGoodsKindChilds(goodsForm.getGoodsKindTemp()));	//获取详细分类
+*/			List<GoodsPicture> goodsPictures = service.getGoodsPicturesByGoodsId(goodsForm.getGoodsId());
 			request.put("goodsPictures",goodsPictures);//将商品所有图片存入reques
 			ActionContext.getContext().getValueStack().push(goodsForm);		//把商品页面表单压入值栈
 			return "success";
@@ -55,15 +54,15 @@ public class AdminUpdateGoodsAction extends ActionSupport implements RequestAwar
 			Goods goods = service.findGoodsById(id);
 			goodsForm = new Conversion<GoodsForm, Goods>().beanToBean(new GoodsForm(), goods);	//bean转换
 			goodsForm.setGoodsKindTemp(goods.getGoodsKind().getId());	//设置商品分类
-			int[] array = new int[goods.getMoreKind().size()];int i=0;
+			/*int[] array = new int[goods.getMoreKind().size()];int i=0;
 			for (GoodsKind goodsKind : goods.getMoreKind()) {	//遍历商品详细分类
 				array[i++]  = goodsKind.getId();
 			}
-			System.out.println(array);
+			System.out.println(array);*/
 			if(goods.getColor()!=null){
 				goodsForm.setColors(goods.getColor().split(" "));
 			}
-			goodsForm.setMoreKindTemp(array);
+			/*goodsForm.setMoreKindTemp(array);*/
 			if(goods.getExplain()!=null){
 				request.put("explain", goods.getExplain().getPath());
 			}

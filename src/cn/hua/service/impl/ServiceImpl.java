@@ -220,10 +220,10 @@ public class ServiceImpl implements Service {
 	public List<GoodsKind> getGoodsKindRoot() {
 		return goodsDao.getGoodsKindRoot();
 	}
-	@Override
+	/*@Override
 	public List<GoodsKind> getGoodsKindChilds(int id) {
 		return goodsDao.getGoodsKindChilds(id);
-	}
+	}*/
 	@Override
 	public GoodsKind getGoodsKind(int id) {
 		return goodsDao.getGoodsKind(id);

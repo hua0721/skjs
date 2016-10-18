@@ -139,7 +139,7 @@
 										listValue="name" theme="simple" data-toggle="popover"
 										data-placement="top" data-content="必须选择一项分类"/></td>
 							</tr>
-							<tr class="moreKindTr">
+							<%-- <tr class="moreKindTr">
 							<s:if test="#request.moreKindAllChild==null">
 								<script>
 									$(".moreKindTr").hide();
@@ -152,7 +152,7 @@
 										<label class="checkbox-inline"><input name="moreKindTemp" type="checkbox" value="${id}" <s:property value="%{id in moreKindTemp ? 'checked' : ''}"/>  >${name}</label>
 									</s:iterator>
 									</td>
-							</tr>
+							</tr> --%>
 							<tr>
 								<td>商品名称</td>
 								<td><input type="text" name="name" class="form-control" value="${name}"

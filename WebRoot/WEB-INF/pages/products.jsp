@@ -21,10 +21,10 @@
 
 </script>
 <!-- Custom Theme files -->
-<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"
 	media="all" />
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="css/menu.css" rel="stylesheet" type="text/css" media="all" />
+<!-- <link href="css/menu.css" rel="stylesheet" type="text/css" media="all" /> -->
 <!-- menu style -->
 <link href="css/animate.min.css" rel="stylesheet" type="text/css"
 	media="all" />
@@ -36,7 +36,7 @@
 <link href="css/font-awesome.css" rel="stylesheet">
 <!-- //font-awesome icons -->
 <!-- js -->
-<script src="js/jquery.min.js"></script>
+<script src="js/jquery/jquery.min.js"></script>
 <script src="js/owl.carousel.js"></script>
 <!-- //js -->
 <!-- scroll to fixed-->
@@ -112,84 +112,50 @@
 			<!--header-one-->
 			<div class="w3ls-header-left">
 				<p>
-					<a href="#"></a>
+					<a href="#"><img src="img/logo.png" class="logo" /></a>
 				</p>
 			</div>
 			<div class="w3ls-header-right">
 				<ul>
 					<li class="dropdown head-dpdn"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-user" aria-hidden="true"></i> My Account<span
-							class="caret"></span></a>
+							class="fa fa-user" aria-hidden="true"></i>我的账户<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="login.html">Login </a></li>
-							<li><a href="signup.html">Sign Up</a></li>
-							<li><a href="login.html">My Orders</a></li>
-							<li><a href="login.html">Wallet</a></li>
+							<s:if test="#session.user!=null">
+								<li><a href="#"><s:property
+											value="#session.user.username" /></a></li>
+								<li><a href="userLogout">注销</a></li>
+								<li><a href="login.html">我的订单</a></li>
+								<li><a href="login.html">钱包</a></li>
+							</s:if>
+							<s:else>
+								<li><a href="loginUi">登陆</a></li>
+							</s:else>
 						</ul></li>
 					<li class="dropdown head-dpdn"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-percent" aria-hidden="true"></i> Today's Deals<span
+							class="fa fa-cart-plus" aria-hidden="true"></i> 购物车<span
 							class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="offers.html">Cash Back Offers</a></li>
-							<li><a href="offers.html">Product Discounts</a></li>
-							<li><a href="offers.html">Special Offers</a></li>
+							<li><a href="offers.html">查看购物车</a></li>
+							<li><a href="offers.html">清空购物车</a></li>
 						</ul></li>
-					<li class="dropdown head-dpdn"><a href="#"
-						class="dropdown-toggle" data-toggle="dropdown"><i
-							class="fa fa-gift" aria-hidden="true"></i> Gift Cards<span
-							class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="offers.html">Product Gift card</a></li>
-							<li><a href="offers.html">Occasions Register</a></li>
-							<li><a href="offers.html">View Balance</a></li>
-						</ul></li>
-					<li class="dropdown head-dpdn"><a href="contact.html"
-						class="dropdown-toggle"><i class="fa fa-map-marker"
-							aria-hidden="true"></i> Store Finder</a></li>
 					<li class="dropdown head-dpdn"><a href="card.html"
-						class="dropdown-toggle"><i class="fa fa-credit-card-alt"
-							aria-hidden="true"></i> Credit Card</a></li>
+						class="dropdown-toggle"><i class="fa fa-star"
+							aria-hidden="true"></i>收藏夹</a></li>
+					<!-- <!-- <li class="dropdown head-dpdn"><a href="contact.html"
+						class="dropdown-toggle"><i class="fa fa-map-marker"
+							aria-hidden="true"></i>实体店</a></li> -->
+					<li class="dropdown head-dpdn"><a href="card.html"
+						class="dropdown-toggle"><i class="fa  fa-smile-o"
+							aria-hidden="true"></i>联系客服</a></li>
 					<li class="dropdown head-dpdn"><a href="help.html"
 						class="dropdown-toggle"><i class="fa fa-question-circle"
-							aria-hidden="true"></i> Help</a></li>
+							aria-hidden="true"></i> 帮助</a></li>
 				</ul>
 			</div>
 			<div class="clearfix"></div>
 		</div>
-		<div class="header-two">
-			<!-- header-two -->
-			<div class="container">
-				<div class="header-search">
-					<form action="#" method="post">
-						<input type="search" name="Search"
-							placeholder="Search for a Product..." required="">
-						<button type="submit" class="btn btn-default"
-							aria-label="Left Align">
-							<i class="fa fa-search" aria-hidden="true"> </i>
-						</button>
-					</form>
-				</div>
-				<div class="header-cart">
-					<div class="my-account">
-						<a href="contact.html"><i class="fa fa-map-marker"
-							aria-hidden="true"></i> CONTACT US</a>
-					</div>
-					<div class="cart">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart" /> <input
-								type="hidden" name="display" value="1" />
-							<button class="w3view-cart" type="submit" name="submit" value="">
-								<i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-							</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //header-two -->
 	<!-- //header -->
 	<!-- products -->
 	<div class="products" style="padding-top:0">
@@ -1082,7 +1048,7 @@
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
 </html>

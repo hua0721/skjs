@@ -1,4 +1,4 @@
-package cn.hua.action;
+/*package cn.hua.action;
 
 import java.util.List;
 
@@ -8,9 +8,9 @@ import cn.hua.service.Service;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SearchOfKindAction extends ActionSupport{
-	/**
+	*//**
 	 * 
-	 */
+	 *//*
 	private static final long serialVersionUID = 1L;
 	private int id;
 	private String result;
@@ -38,3 +38,4 @@ public class SearchOfKindAction extends ActionSupport{
 		return SUCCESS;
 	}
 }
+*/

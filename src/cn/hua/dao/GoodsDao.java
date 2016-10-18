@@ -12,7 +12,7 @@ import cn.hua.model.ShoppingCart;
 public interface GoodsDao extends Dao<Goods> {
 	public List<GoodsKind> getGoodsKindRoot();
 	public GoodsKind getGoodsKind(int id);
-	public List<GoodsKind> getGoodsKindChilds(int id);
+	/*public List<GoodsKind> getGoodsKindChilds(int id);*/
 	public void SaveGoodsPicture(GoodsPicture goodsPicture);
 	public GoodsPicture getGoodsPicture(String id);
 	public List<GoodsPicture> getGoodsPicturesByGoodsId(String goodsId);

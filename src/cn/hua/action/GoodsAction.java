@@ -61,11 +61,11 @@ public class GoodsAction extends ActionSupport implements ModelDriven<GoodsForm>
 			return ERROR;
 		}
 		goods.setGoodsKind(new GoodsKind(goodsForm.getGoodsKindTemp()));
-		Set<GoodsKind> set = new HashSet<GoodsKind>();
+		/*Set<GoodsKind> set = new HashSet<GoodsKind>();
 		for(int i=0;i<goodsForm.getMoreKindTemp().length;i++){
 			set.add(new GoodsKind(goodsForm.getMoreKindTemp()[i]));
 		}
-		goods.setMoreKind(set);
+		goods.setMoreKind(set);*/
 		try{
 			//判断表单是否有带ID过来，如果有则执行更新，没有则新增
 			if(goods.getGoodsId()==null||goods.getGoodsId()!=null&&goods.getGoodsId().trim().equals("")){

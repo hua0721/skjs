@@ -1,7 +1,5 @@
 package cn.hua.formBean;
 
-import java.util.Arrays;
-
 public class Paging {
 	private int size=1;
 	private int currentPage=1;
@@ -11,11 +9,11 @@ public class Paging {
 	private String keywords="";
 	private int totalPage;
 	private long totalNum;
-	private int isShowChart=1;
+	private String scene;;
 	private String role="0";
 	private int function=1;
 	private int goodsKind;
-	private int[] moreKind;
+	/*private int[] moreKind;*/
 	private int putawayGoods;
 	
 	public int getPutawayGoods() {
@@ -30,12 +28,12 @@ public class Paging {
 	public void setGoodsKind(int goodsKind) {
 		this.goodsKind = goodsKind;
 	}
-	public int[] getMoreKind() {
+/*	public int[] getMoreKind() {
 		return moreKind;
 	}
 	public void setMoreKind(int[] moreKind) {
 		this.moreKind = moreKind;
-	}
+	}*/
 	public int getSize() {
 		return size;
 	}
@@ -99,16 +97,16 @@ public class Paging {
 				+ ", currentRow=" + currentRow + ", classify=" + classify
 				+ ", state=" + state + ", keywords=" + keywords
 				+ ", totalPage=" + totalPage + ", totalNum=" + totalNum
-				+ ", isShowChart=" + isShowChart + ", role=" + role
+				+ ", isShowChart=" + scene + ", role=" + role
 				+ ", function=" + function + ", goodsKind=" + goodsKind
-				+ ", moreKind=" + Arrays.toString(moreKind) + ", putawayGoods="
+				+", putawayGoods="
 				+ putawayGoods + "]";
 	}
-	public int getIsShowChart() {
-		return isShowChart;
+	public String getScene() {
+		return scene;
 	}
-	public void setIsShowChart(int isShowChart) {
-		this.isShowChart = isShowChart;
+	public void setScene(String scene) {
+		this.scene = scene;
 	}
 	public String getRole() {
 		return role;

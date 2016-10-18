@@ -1316,7 +1316,7 @@ li {
 		var totalPage = ${totalPage};
 		var currentPage = ${currentPage};
 		var rowsize = ${size};
-		var isShowChart = ${isShowChart};
+		/* var isShowChart = ${isShowChart}; */
 		var classify = ${classify};
 		var functionVal = ${function};
 		var i18nConfig = eval("(" + "${sessionScope.i18nConfig}" + ")");

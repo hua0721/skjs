@@ -44,7 +44,7 @@ public class Goods implements Serializable {
 	private Set<GoodsPicture> goodsPicture = new HashSet<GoodsPicture>();
 	private GoodsKind goodsKind;
 	private VisitGoodsLog visitGoodsLog;
-	private Set<GoodsKind> moreKind = new HashSet<GoodsKind>();
+	/*private Set<GoodsKind> moreKind = new HashSet<GoodsKind>();*/
 	public Goods(){}
 	public Goods(String id){
 		this.goodsId = id;
@@ -152,13 +152,13 @@ public class Goods implements Serializable {
 	public void setGoodsKind(GoodsKind goodsKind) {
 		this.goodsKind = goodsKind;
 	}
-	@ManyToMany(fetch=FetchType.EAGER)
+	/*@ManyToMany(fetch=FetchType.EAGER)
 	public Set<GoodsKind> getMoreKind() {
 		return moreKind;
 	}
 	public void setMoreKind(Set<GoodsKind> moreKind) {
 		this.moreKind = moreKind;
-	}
+	}*/
 	@OneToOne(cascade={CascadeType.REMOVE})
 	public Explain getExplain() {
 		return explain;

@@ -91,11 +91,11 @@
 			<result name="adminGoods" type="redirectAction">admin_manageGoods</result>
 			<result name="input">WEB-INF/pages/adminlogin.jsp</result>
 		</action>
-		<!-- 前台产品信息处理与跳转 -->
-		<!-- <action name="featuredProducts" class="cn.hua.action.IndexAction"
-			method="featuredProducts">
-			<result>WEB-INF/pages/featuredProducts.jsp</result>
-		</action> -->
+		<!-- 产品详细页 -->
+		<action name="single" class="cn.hua.action.SingleAction" method="get">
+			<result name="index">WEB-INF/pages/index.jsp</result>
+			<result>WEB-INF/pages/single.jsp</result>
+		</action>
 		<!-- -->
 		<action name="go_*">
 			<result>WEB-INF/pages/{1}.jsp</result>

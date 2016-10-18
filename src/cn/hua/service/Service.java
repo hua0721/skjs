@@ -44,7 +44,7 @@ public interface Service {
 	public Permission findPermissionById(int id);
 	public void updateRole(Role role);
 	public List<GoodsKind> getGoodsKindRoot();
-	public List<GoodsKind> getGoodsKindChilds(int id);
+/*	public List<GoodsKind> getGoodsKindChilds(int id);*/
 	public GoodsKind getGoodsKind(int id);
 	public void savePhoto(Photo photo);
 	public Photo loadPhoto(String id);

@@ -409,7 +409,7 @@
 		var totalPage = ${totalPage};
 		var currentPage = ${currentPage};
 		var rowsize = ${size};
-		var isShowChart = ${isShowChart};
+		/* var isShowChart = ${isShowChart}; */
 		var classify = ${classify};
 		var i18nConfig = eval("(" + "${sessionScope.i18nConfig}" + ")");
 		var i18n = new Map();

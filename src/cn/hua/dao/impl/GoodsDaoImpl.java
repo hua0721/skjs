@@ -9,15 +9,12 @@ import org.hibernate.query.Query;
 import org.springframework.orm.hibernate5.HibernateTemplate;
 import org.springframework.stereotype.Component;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
-
 import cn.hua.dao.GoodsDao;
 import cn.hua.formBean.Paging;
 import cn.hua.model.BreviaryPicture;
 import cn.hua.model.Goods;
 import cn.hua.model.GoodsKind;
 import cn.hua.model.GoodsPicture;
-import cn.hua.model.MySet;
 import cn.hua.model.ShoppingCart;
 @Component
 public class GoodsDaoImpl implements GoodsDao {
@@ -54,11 +51,11 @@ public class GoodsDaoImpl implements GoodsDao {
 	public GoodsKind getGoodsKind(int id) {
 		return hibernateTemplate.get(GoodsKind.class, id);
 	}
-	@SuppressWarnings("unchecked")
+	/*@SuppressWarnings("unchecked")
 	@Override
 	public List<GoodsKind> getGoodsKindChilds(int id) {
 		return (List<GoodsKind>) hibernateTemplate.find("from GoodsKind where parent.id="+id);
-	}
+	}*/
 	@Override
 	public void SaveGoodsPicture(GoodsPicture goodsPicture) {
 		hibernateTemplate.save(goodsPicture);
@@ -101,6 +98,11 @@ public class GoodsDaoImpl implements GoodsDao {
 					.getCurrentSession();
 			Query<Goods> query = null; // 鑾峰彇涓嶅悓瀵硅薄鐨勫垎椤垫暟鎹�
 			System.out.println(paging);
+			if(paging.getScene()!=null&&"new".equals(paging.getScene())){
+				query = session.createQuery("from Goods where state.id=7 order by shelfTime desc");
+			}else if(paging.getScene()!=null&&"recommend".equals(paging.getScene())){
+				query = session.createQuery("from Goods where state.id=7 order by sellsum desc");
+			}else
 			query = session.createQuery("from Goods");
 			paging.setTotalNum(query.list().size());
 			return query.setFirstResult(paging.getCurrentRow())
@@ -125,6 +127,11 @@ public class GoodsDaoImpl implements GoodsDao {
 	public ShoppingCart getShoppingCartByUserId(String id) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	@Override
+	public void updateShoppingCart(ShoppingCart cart) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
